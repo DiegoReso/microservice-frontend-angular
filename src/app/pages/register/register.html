@@ -1,0 +1,39 @@
+<div class="register-component">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Cadastro de Usuário</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Digite seu nome" />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Digite seu email" />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide() ? 'password' : 'text'" />
+          <button
+            matIconButton
+            matSuffix
+            (click)="clickEvent($event)"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide()"
+          >
+            <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+        </mat-form-field>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="full-width" matButton="elevated">Cadastrar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

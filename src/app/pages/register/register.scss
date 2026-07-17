@@ -1,0 +1,12 @@
+.register-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e2e0e0;
+}
+
+mat-card {
+  width: 400px;
+  padding: 20px;
+}
