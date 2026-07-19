@@ -1,11 +1,19 @@
-import { Component, signal } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
+import { Component, Input, signal } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+
 @Component({
   selector: 'input-password-field',
-  imports: [MatFormFieldModule, MatIconModule, MatInputModule, MatButtonModule],
+  imports: [
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+  ],
   templateUrl: './password-field.html',
   styleUrl: './password-field.scss',
 })
@@ -15,4 +23,6 @@ export class PasswordField {
     this.hide.set(!this.hide());
     event.stopPropagation();
   }
+
+  @Input({ required: true }) control!: FormControl;
 }
